@@ -6,31 +6,47 @@ using System.Threading.Tasks;
 
 namespace Demo
 {
-    public delegate bool ConditionalFunctionDelegate(int number);
+    //public delegate bool ConditionalFunctionDelegate(int number);
+    public delegate bool ConditionalFunctionDelegate<T>(T number);
 
     internal static class Helper
     {
-        public static List<int> GetNumbersByPassedFunc (List<int> numbers, ConditionalFunctionDelegate Condition)
+        public static List<T> GetElementsBasedOnPassedFunction<T>(List<T> Elements, ConditionalFunctionDelegate<T> Condition)
         {
-            List<int> oddNumbers = new List<int>();
-            
+            List<T> Result = new List<T>();
+            if (Elements is null || Condition is null)
+                return Result;
 
-            if (numbers == null || Condition is null)
+            foreach (T Element in Elements)
             {
-                return oddNumbers;
+                if (Condition(Element))
+                    Result.Add(Element);
             }
-            
-            foreach (int number in numbers)
-            {
-                //if(Condition.Invoke(number))
-                if (Condition(number))
-                {
-                    oddNumbers.Add(number);
-                }
-            }
-            
-            return oddNumbers;
+
+            return Result;
         }
+
+
+        //public static List<int> GetNumbersByPassedFunc (List<int> numbers, ConditionalFunctionDelegate Condition)
+        //{
+        //    List<int> oddNumbers = new List<int>();
+            
+        //    if (numbers == null || Condition is null)
+        //    {
+        //        return oddNumbers;
+        //    }
+            
+        //    foreach (int number in numbers)
+        //    {
+        //        //if(Condition.Invoke(number))
+        //        if (Condition(number))
+        //        {
+        //            oddNumbers.Add(number);
+        //        }
+        //    }
+            
+        //    return oddNumbers;
+        //}
 
         //public static List<int> GetEvenNumbers(List<int> numbers)
         //{

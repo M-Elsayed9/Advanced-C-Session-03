@@ -88,6 +88,18 @@
             //List<int> Divisble7 = Helper.GetNumbersByPassedFunc(Numbers, ConditionalFunctions.IsDivisibleBy7); 
             #endregion
 
+            #region Delegate with Generics
+
+            List<string> list = new List<string>() { "Ahmed", "Omar", "Mai", "Kareem", "Manar" };
+            
+            List<string> Result = Helper.GetElementsBasedOnPassedFunction(list, ConditionalFunctions.CheckStringLength);
+
+            foreach (string item in Result)
+            {
+                System.Console.WriteLine(item);
+            }
+            #endregion
+
             #endregion
         }
     }

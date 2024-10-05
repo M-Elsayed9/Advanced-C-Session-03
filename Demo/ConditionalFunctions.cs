@@ -27,5 +27,10 @@ namespace Demo
         {
             return number % 10 == 0;
         }
+
+        public static bool CheckStringLength(string str)
+        {
+            return str?.Length > 4;
+        }
     }
 }
