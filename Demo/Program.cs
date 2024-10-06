@@ -297,6 +297,27 @@
 
             #region List Methods with Functions as params
 
+            List<int> Numbers = Enumerable.Range(1, 100).ToList();
+
+            List<int> OddNumbers = Numbers.FindAll(x => x % 2 != 0).ToList(); // Find all odd numbers
+
+            //foreach (int item in OddNumbers)
+            //{
+            //    System.Console.WriteLine(item);
+            //}
+
+            int OddNum = Numbers.Find(X => X % 2 == 1); // Find the first odd number
+
+            int index = Numbers.FindIndex(x => x % 2 == 1); // Find the index of the first odd number
+            
+            int LastIndex = Numbers.FindLastIndex(x => x % 2 == 1); // Find the index of the last odd number
+
+            Numbers.ForEach(X => X += 10); // wont affect the original list
+
+            Numbers.ForEach(X => Console.WriteLine(X+10));
+
+            int NumOfRemoved = Numbers.RemoveAll(x => x % 5 == 0); // Remove all even numbers
+
 
 
             #endregion
