@@ -90,28 +90,28 @@
 
             #region Ex 03
 
-            List<int> Numbers = Enumerable.Range(1, 100).ToList();
+            //List<int> Numbers = Enumerable.Range(1, 100).ToList();
 
 
-            List<int> OddNumbers = GetElementsbasedOnPassedFunction(Numbers, ConditionalFunctions.IsOdd);
+            //List<int> OddNumbers = GetElementsbasedOnPassedFunction(Numbers, ConditionalFunctions.IsOdd);
 
-            foreach (int item in OddNumbers)
-            {
-                System.Console.WriteLine(item);
-            }
+            //foreach (int item in OddNumbers)
+            //{
+            //    System.Console.WriteLine(item);
+            //}
 
-            List<int> EvenNumbers = GetElementsbasedOnPassedFunction(Numbers, ConditionalFunctions.IsEven);
+            //List<int> EvenNumbers = GetElementsbasedOnPassedFunction(Numbers, ConditionalFunctions.IsEven);
 
-            foreach (int item in EvenNumbers)
-            {
-                System.Console.WriteLine(item);
-            }
+            //foreach (int item in EvenNumbers)
+            //{
+            //    System.Console.WriteLine(item);
+            //}
 
-            Predicate<int> IsDivisibleBy7 = delegate (int num)
-            {
-                return num % 7 == 0;
-            };
-            List<int> Divisble7 = GetElementsbasedOnPassedFunction(Numbers, ConditionalFunctions.IsDivisibleBy7);
+            //Predicate<int> IsDivisibleBy7 = delegate (int num)
+            //{
+            //    return num % 7 == 0;
+            //};
+            //List<int> Divisble7 = GetElementsbasedOnPassedFunction(Numbers, ConditionalFunctions.IsDivisibleBy7);
             #endregion
 
             #region Delegate with Generics
@@ -132,12 +132,77 @@
             #endregion
 
             #region Built in Delegate
+            
+            #region Predicate
+            
+            //Predicate<int> predicate; // Ref => Method that takes one parameter and returns a boolean
 
+            //predicate = TestingFunctions.Test01;
 
+            //bool Result = predicate(5);
+
+            //System.Console.WriteLine(Result);
+            #endregion
+
+            #region Func
+
+            Func<int, string> Func; // Ref => Method that takes one parameter and returns a value
+
+            //Func = delegate (int x)
+            //{
+            //    return x.ToString();
+            //};
+
+            Func = TestingFunctions.Test02;
+
+            string Result2 = Func(5);
+            #endregion
+
+            #region Action
+
+            //Action action; // Ref => Method that takes 0 parameters and returns void
+
+            //action = TestingFunctions.Test03;
+
+            //action();
+            //action = delegate ()
+            //{
+            //    System.Console.WriteLine("Hello");
+            //};
+
+            //Action<string> action; // Ref => Method that takes 1-16 parameters and returns void
+
+            //action = TestingFunctions.Test04;
+
+            //action("Ahmed");
 
             #endregion
 
             #endregion
+
+            #endregion
+        }
+    }
+
+    class TestingFunctions
+    {
+        public static bool Test01(int x)
+        {
+            return x > 0;
+        }
+
+        public static string Test02(int x)
+        {
+            return x.ToString();
+        }
+
+        public static void Test03()
+        {
+            System.Console.WriteLine("Hello");
+        }
+
+        public static void Test04(string Name) {
+            System.Console.WriteLine($"Hello {Name}");
         }
     }
 }
