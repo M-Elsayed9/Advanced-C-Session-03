@@ -18,5 +18,15 @@ namespace Demo
         {
             return x < y;
         }
+
+        public static bool SortAscending(string x, string y)
+        {
+            return x?.Length < y?.Length;
+        }
+
+        public static bool SortDescending(string x, string y)
+        {
+            return x?.Length > y?.Length;
+        }
     }
 }

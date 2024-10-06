@@ -9,8 +9,35 @@
     // this function may be static or non static 
     // this function may be in the same class or in another class
 
+    #region Built-in Delegate
+    // 1. Predicate
+    // can refer to a function that takes one parameter (of any datatype because it is generic) and returns a boolean
+
+    // 2. Func
+    // can refer to a function that takes 0-16 parameters and returns a value
+
+    // 3. Action
+    // can refer to a function that takes 0-16 parameters and returns void
+
+    #endregion
+
     internal class Program
     {
+
+        //public static List<T> GetElementsbasedOnPassedFunction<T>(List<T> list, Predicate<T> func)
+        //{
+        //    List<T> Result = new List<T>();
+
+        //    foreach (T item in list)
+        //    {
+        //        if (func.Invoke(item))
+        //        {
+        //            Result.Add(item);
+        //        }
+        //    }
+
+        //    return Result;
+        //}
         static void Main(string[] args)
         {
             #region Delegate
@@ -63,41 +90,51 @@
 
             #region Ex 03
 
-            //List<int> Numbers = Enumerable.Range(1, 100).ToList();
+            List<int> Numbers = Enumerable.Range(1, 100).ToList();
 
-            //ConditionalFunctionDelegate IsOdd = ConditionalFunctions.IsOdd;
 
-            //List<int> OddNumbers = Helper.GetNumbersByPassedFunc(Numbers, IsOdd);
+            List<int> OddNumbers = GetElementsbasedOnPassedFunction(Numbers, ConditionalFunctions.IsOdd);
 
-            //foreach (int item in OddNumbers)
-            //{
-            //    System.Console.WriteLine(item);
-            //}
+            foreach (int item in OddNumbers)
+            {
+                System.Console.WriteLine(item);
+            }
 
-            //ConditionalFunctionDelegate IsEven = ConditionalFunctions.IsEven;
+            List<int> EvenNumbers = GetElementsbasedOnPassedFunction(Numbers, ConditionalFunctions.IsEven);
 
-            //List<int> EvenNumbers = Helper.GetNumbersByPassedFunc(Numbers, IsEven);
+            foreach (int item in EvenNumbers)
+            {
+                System.Console.WriteLine(item);
+            }
 
-            //foreach (int item in EvenNumbers)
-            //{
-            //    System.Console.WriteLine(item);
-            //}
-
-            //ConditionalFunctionDelegate IsDivisibleBy7 = ConditionalFunctions.IsDivisibleBy7;
-
-            //List<int> Divisble7 = Helper.GetNumbersByPassedFunc(Numbers, ConditionalFunctions.IsDivisibleBy7); 
+            Predicate<int> IsDivisibleBy7 = delegate (int num)
+            {
+                return num % 7 == 0;
+            };
+            List<int> Divisble7 = GetElementsbasedOnPassedFunction(Numbers, ConditionalFunctions.IsDivisibleBy7);
             #endregion
 
             #region Delegate with Generics
 
-            List<string> list = new List<string>() { "Ahmed", "Omar", "Mai", "Kareem", "Manar" };
-            
-            List<string> Result = Helper.GetElementsBasedOnPassedFunction(list, ConditionalFunctions.CheckStringLength);
+            //List<string> list = new List<string>() { "Ahmed", "Omar", "Mai", "Kareem", "Manar" };
 
-            foreach (string item in Result)
-            {
-                System.Console.WriteLine(item);
-            }
+            //Predicate<string> CheckStringLength = delegate (string str)
+            //{
+            //    return str.Length > 4;
+            //};
+
+            //List<string> Result = GetElementsbasedOnPassedFunction(list, ConditionalFunctions.CheckStringLength);
+
+            //foreach (string item in Result)
+            //{
+            //    System.Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region Built in Delegate
+
+
+
             #endregion
 
             #endregion
