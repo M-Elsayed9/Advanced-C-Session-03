@@ -268,6 +268,39 @@
 
             #endregion
 
+            #region Delegate New Feature
+
+            //Predicate<int> predicate = x => x > 0;
+            //predicate(5);
+
+            //var Predicate = (int x) => x > 0;
+            //Predicate(5);
+
+            //Func<int, string> Func = x => x.ToString();
+            //Func(5);
+
+            //var Func1 = (int x) => x.ToString();
+            //Func1(5);
+
+            //Action action = () => Console.WriteLine("Hello");
+            //action();
+
+            //Action<string> action1 = Name => Console.WriteLine($"Hello {Name}");
+            //action1("Ahmed");
+
+            //var Action = () => Console.WriteLine("Hello");
+
+            //var action2 = (string Name) => Console.WriteLine($"Hello {Name}");
+            //action2("Ahmed");
+
+            #endregion
+
+            #region List Methods with Functions as params
+
+
+
+            #endregion
+
             #endregion
         }
     }
