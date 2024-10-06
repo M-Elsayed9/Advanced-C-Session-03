@@ -132,9 +132,9 @@
             #endregion
 
             #region Built in Delegate
-            
+
             #region Predicate
-            
+
             //Predicate<int> predicate; // Ref => Method that takes one parameter and returns a boolean
 
             //predicate = TestingFunctions.Test01;
@@ -146,16 +146,16 @@
 
             #region Func
 
-            Func<int, string> Func; // Ref => Method that takes one parameter and returns a value
+            //Func<int, string> Func; // Ref => Method that takes one parameter and returns a value
 
-            //Func = delegate (int x)
-            //{
-            //    return x.ToString();
-            //};
+            ////Func = delegate (int x)
+            ////{
+            ////    return x.ToString();
+            ////};
 
-            Func = TestingFunctions.Test02;
+            //Func = TestingFunctions.Test02;
 
-            string Result2 = Func(5);
+            //string Result2 = Func(5);
             #endregion
 
             #region Action
@@ -175,6 +175,94 @@
             //action = TestingFunctions.Test04;
 
             //action("Ahmed");
+
+            #endregion
+
+            #endregion
+
+            #region Annonymos Methods and Lambda Expressions
+
+            #region Annonyomos Method
+
+            #region Predicate
+            //Predicate<int> predicate; // Ref => Method that takes one parameter and returns a boolean
+
+            //predicate = delegate (int x) { return x > 0; }; // Annonymous Method
+
+            //bool Result = predicate(5);
+
+            //System.Console.WriteLine(Result);
+            #endregion
+
+            #region Func
+            //Func<int, string> Func; // Ref => Method that takes one parameter and returns a value
+
+            //Func = delegate (int x)
+            //{
+            //    return x.ToString();
+            //}; 
+            #endregion
+
+            #region Action
+
+            //Action action; // Ref => Method that takes 0 parameters and returns void
+
+            //action = TestingFunctions.Test03;
+
+            //action();
+
+            //action = delegate ()
+            //{
+            //    System.Console.WriteLine("Hello");
+            //};
+
+            //Action<string> action1; // Ref => Method that takes 1-16 parameters and returns void
+
+            //action1 = delegate (string Name)
+            //{ Console.WriteLine($"Hello {Name}"); };
+
+            //action1("Ahmed");
+            #endregion
+
+            #endregion
+
+            #region Lambda Expression
+
+            #region Predicate
+            //Predicate<int> predicate; // Ref => Method that takes one parameter and returns a boolean
+
+            //predicate = (x) => x > 0; // Lambda Expression
+
+            //bool Result = predicate(5);
+
+            //System.Console.WriteLine(Result);
+
+            #endregion
+
+            #region Func
+
+            //Func<int, string> Func; // Ref => Method that takes one parameter and returns a value
+
+            //Func = (x) => x.ToString(); // Lambda Expression
+
+            //string Result2 = Func(5);
+
+            #endregion
+
+            #region Action
+
+            //Action action; // Ref => Method that takes 0 parameters and returns void
+
+            //action = () => Console.WriteLine("Hello"); // Lambda Expression
+
+            //action();
+
+            //Action<string> action1; // Ref => Method that takes 1-16 parameters and returns void
+
+            //action1 = (Name) => Console.WriteLine($"Hello {Name}"); 
+
+            //action1("Ahmed");
+            #endregion
 
             #endregion
 
